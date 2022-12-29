@@ -18,6 +18,6 @@ public class State {
     private String name;
 
     @ManyToOne // many states can belong to one country
-    @Column(name = "country")
+    @JoinColumn(name = "country_id") //  marks a column as a join column for an entity association or an element collection.
     private Country country;
 }
