@@ -1,5 +1,7 @@
 package com.ecommerce.products.entity;
 
+// @JsonIgnore is used at field level to mark a property or list of properties to be ignored.
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,7 @@ public class Country {
 
     // One country can have many states
     @OneToMany(mappedBy = "country")
+    @JsonIgnore // will ignore the states
     private List<State> states;
 
 }
